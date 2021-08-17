@@ -1,0 +1,1066 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     36973,       1058]
+NotebookOptionsPosition[     35731,       1012]
+NotebookOutlinePosition[     36079,       1027]
+CellTagsIndexPosition[     36036,       1024]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"n", " ", "=", " ", 
+    RowBox[{"Input", "[", "]"}]}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Taking", " ", "user", " ", "input", " ", "as", " ", "the", " ", "size", 
+    " ", "of", " ", "rows", " ", "now", " ", "its", " ", "setting", " ", "as",
+     " ", "9.", " ", "when", " ", "your", " ", "data", " ", "set", " ", 
+    "changed", " ", "you", " ", "must", " ", "adjust", " ", "the", " ", 
+    "value", " ", "of", " ", "n", " ", "with", " ", "new", " ", "data", " ", 
+    RowBox[{"set", "."}]}], " ", "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "dir", " ", "=", " ", 
+    "\"\<C:\\\\Users\\\\Aminul \
+Islam\\\\Desktop\\\\SayedurAssignment\\\\input.txt\>\""}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "This", " ", "is", " ", "the", " ", "directory", " ", "where", " ", 
+     "your", " ", "input", " ", "file", " ", "exists"}], ",", " ", 
+    RowBox[{
+     RowBox[{
+     "you", " ", "can", " ", "change", " ", "this", " ", "directory", " ", 
+      "any", " ", "time"}], ";", " ", 
+     RowBox[{"just", " ", "write", " ", "your", " ", "directory", " ", 
+      RowBox[{"to", " ", "'"}], 
+      RowBox[{"dir", "'"}], " ", "variable", " ", "as", " ", "string"}]}]}], 
+   " ", "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.780883834933883*^9, 3.780883865322483*^9}, {
+   3.7808846710800157`*^9, 3.7808846763297386`*^9}, {3.7808849038296404`*^9, 
+   3.7808850479759274`*^9}, {3.780885259988256*^9, 3.780885312984593*^9}, 
+   3.7808911396697927`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"A", " ", "=", " ", 
+  RowBox[{"Import", "[", 
+   RowBox[{"dir", ",", " ", "\"\<Table\>\""}], "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Importing", " ", "Data", " ", "set", " ", "from", " ", "the", " ", "file",
+     " ", "in", " ", "Table", " ", "format"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.7808838696814713`*^9, 3.7808838843836656`*^9}, {
+  3.780884263389529*^9, 3.780884264920673*^9}, {3.7808850521318903`*^9, 
+  3.780885085723318*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "40", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"95", ",", "55"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"72", ",", "86", ",", "74"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"66", ",", "13", ",", "8", ",", "98"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"81", ",", "50", ",", "82", ",", "44", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"25", ",", "72", ",", "4", ",", "21", ",", "7", ",", "15"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "53", ",", "39", ",", "39", ",", "31", ",", "97", ",", "86", ",", "61"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "40", ",", "72", ",", "28", ",", "15", ",", "52", ",", "65", ",", "7", 
+     ",", "45"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "72", ",", "53", ",", "90", ",", "46", ",", "65", ",", "33", ",", "71", 
+     ",", "70", ",", "58"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.780884265858019*^9, 3.780884681501172*^9, 
+  3.780903206417686*^9, 3.780904648475437*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"B", " ", "=", " ", "A"}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Coppying", " ", "Matrix", " ", "A", " ", "to", " ", "Matrix", " ", "B", 
+    " ", "to", " ", "store", " ", "new", " ", "calculated", " ", "data", " ", 
+    "set"}], "*)"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "The", " ", "next", " ", "nested", " ", "for", " ", "loop", " ", "block", 
+     " ", "is", " ", "for", " ", "finding", " ", "the", " ", "shortest", " ", 
+     "path", " ", "to", " ", "go", " ", "to", " ", "beneath", " ", "of", " ", 
+     "from", " ", 
+     RowBox[{"top", ".", "\[IndentingNewLine]", "This"}], " ", "is", " ", "a",
+      " ", "dynamic", " ", "programming", " ", "approach"}], ";", " ", 
+    RowBox[{
+    "little", " ", "bit", " ", "similar", " ", "with", " ", "graph", " ", 
+     "theory"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{
+  3.7808840931044226`*^9, {3.780891251568365*^9, 3.7808912621300645`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", " ", "=", " ", "2"}], ",", " ", 
+     RowBox[{"i", " ", "\[LessEqual]", " ", "n"}], ",", " ", 
+     RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"j", " ", "=", " ", "1"}], ",", " ", 
+       RowBox[{"j", " ", "\[LessEqual]", " ", "i"}], ",", " ", 
+       RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"j", " ", "\[Equal]", " ", "1"}], ",", " ", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"B", "[", 
+            RowBox[{"[", 
+             RowBox[{"i", ",", " ", "j"}], "]"}], "]"}], " ", "=", " ", 
+           RowBox[{
+            RowBox[{"B", "[", 
+             RowBox[{"[", 
+              RowBox[{"i", ",", " ", "j"}], "]"}], "]"}], " ", "+", " ", 
+            RowBox[{"B", "[", 
+             RowBox[{"[", 
+              RowBox[{
+               RowBox[{"i", " ", "-", " ", "1"}], ",", " ", "j"}], "]"}], 
+             "]"}]}]}]}], "\[IndentingNewLine]", "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"j", "\[Equal]", " ", "i"}], ",", " ", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"B", "[", 
+             RowBox[{"[", 
+              RowBox[{"i", ",", " ", "j"}], "]"}], "]"}], "  ", "=", " ", 
+            RowBox[{
+             RowBox[{"B", "[", 
+              RowBox[{"[", 
+               RowBox[{"i", ",", " ", "j"}], "]"}], "]"}], " ", "+", " ", 
+             RowBox[{"B", "[", 
+              RowBox[{"[", 
+               RowBox[{
+                RowBox[{"i", " ", "-", " ", "1"}], ",", " ", 
+                RowBox[{"j", " ", "-", " ", "1"}]}], "]"}], "]"}]}]}], 
+           ";"}]}], "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"j", " ", ">", " ", "1"}], ";", " ", 
+           RowBox[{"j", "<", " ", "i"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"B", "[", 
+                RowBox[{"[", 
+                 RowBox[{"i", ",", " ", "j"}], "]"}], "]"}], " ", "+", " ", 
+               RowBox[{"B", "[", 
+                RowBox[{"[", 
+                 RowBox[{
+                  RowBox[{"i", " ", "-", " ", "1"}], ",", " ", 
+                  RowBox[{"j", " ", "-", " ", "1"}]}], "]"}], "]"}]}], " ", 
+              "\[LessEqual]", " ", 
+              RowBox[{
+               RowBox[{"B", "[", 
+                RowBox[{"[", 
+                 RowBox[{"i", ",", " ", "j"}], "]"}], "]"}], " ", "+", " ", 
+               RowBox[{"B", "[", 
+                RowBox[{"[", 
+                 RowBox[{
+                  RowBox[{"i", " ", "-", " ", "1"}], ",", " ", "j"}], "]"}], 
+                "]"}]}]}], ",", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"B", "[", 
+               RowBox[{"[", 
+                RowBox[{"i", ",", " ", "j"}], "]"}], "]"}], "  ", "=", " ", 
+              RowBox[{
+               RowBox[{"B", "[", 
+                RowBox[{"[", 
+                 RowBox[{"i", ",", " ", "j"}], "]"}], "]"}], " ", "+", " ", 
+               RowBox[{"B", "[", 
+                RowBox[{"[", 
+                 RowBox[{
+                  RowBox[{"i", " ", "-", " ", "1"}], ",", " ", 
+                  RowBox[{"j", " ", "-", " ", "1"}]}], "]"}], "]"}]}]}]}], 
+            "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"B", "[", 
+                RowBox[{"[", 
+                 RowBox[{"i", ",", " ", "j"}], "]"}], "]"}], " ", "+", " ", 
+               RowBox[{"B", "[", 
+                RowBox[{"[", 
+                 RowBox[{
+                  RowBox[{"i", " ", "-", " ", "1"}], ",", " ", 
+                  RowBox[{"j", " ", "-", " ", "1"}]}], "]"}], "]"}]}], " ", 
+              ">", " ", 
+              RowBox[{
+               RowBox[{"B", "[", 
+                RowBox[{"[", 
+                 RowBox[{"i", ",", " ", "j"}], "]"}], "]"}], " ", "+", " ", 
+               RowBox[{"B", "[", 
+                RowBox[{"[", 
+                 RowBox[{
+                  RowBox[{"i", " ", "-", " ", "1"}], ",", " ", "j"}], "]"}], 
+                "]"}]}]}], ",", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"B", "[", 
+               RowBox[{"[", 
+                RowBox[{"i", ",", " ", "j"}], "]"}], "]"}], "  ", "=", " ", 
+              RowBox[{
+               RowBox[{"B", "[", 
+                RowBox[{"[", 
+                 RowBox[{"i", ",", " ", "j"}], "]"}], "]"}], " ", "+", " ", 
+               RowBox[{"B", "[", 
+                RowBox[{"[", 
+                 RowBox[{
+                  RowBox[{"i", " ", "-", " ", "1"}], ",", " ", "j"}], "]"}], 
+                "]"}]}]}]}], "\[IndentingNewLine]", "]"}]}]}], 
+         "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+    "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.780884110165675*^9, 3.78088411166564*^9}, {
+  3.780884398348952*^9, 3.7808844103011656`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"B", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Printing", " ", "the", " ", "final", " ", "calculated", " ", "matrix", 
+    " ", "and", " ", "clearly", " ", "the", " ", "minimum", " ", "value", " ",
+     "of", " ", "the", " ", "last", " ", "row", " ", "of", " ", "B", " ", 
+    "is", " ", "required", " ", 
+    RowBox[{"answer", "/", "sum"}], " ", "of", " ", "shortest", " ", "path"}],
+    "*)"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "40", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"135", ",", "95"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"207", ",", "181", ",", "169"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"273", ",", "194", ",", "177", ",", "267"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"354", ",", "244", ",", "259", ",", "221", ",", "269"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "379", ",", "316", ",", "248", ",", "242", ",", "228", ",", "284"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "432", ",", "355", ",", "287", ",", "273", ",", "325", ",", "314", ",", 
+     "345"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "472", ",", "427", ",", "315", ",", "288", ",", "325", ",", "379", ",", 
+     "321", ",", "390"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "544", ",", "480", ",", "405", ",", "334", ",", "353", ",", "358", ",", 
+     "392", ",", "391", ",", "448"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.780884134226493*^9, 3.7808841671148443`*^9, 
+  3.7808844942485013`*^9, 3.780884693750338*^9, 3.780903222197831*^9, 
+  3.7809046595155306`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "In", " ", "the", " ", "next", " ", "block", " ", "of", " ", "codes"}], 
+    ",", " ", 
+    RowBox[{
+    "searching", " ", "the", " ", "last", " ", "row", " ", "to", " ", "store",
+      " ", "the", " ", "summation", " ", "of", " ", "the", " ", "shortest", 
+     " ", "path", " ", "to", " ", "the", " ", 
+     RowBox[{"variable", " ", "'"}], 
+     RowBox[{"sumOfShortestPath", "'"}], " ", "and", " ", "the", " ", "index",
+      " ", "of", " ", "the", " ", "sum", " ", "to", " ", "the", " ", 
+     RowBox[{"variable", " ", "'"}], "lastSmallValueIndex"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"sumOfShortestPath", " ", "=", " ", 
+     RowBox[{"B", "[", 
+      RowBox[{"[", 
+       RowBox[{"n", ",", " ", "1"}], "]"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"lastSmallValueIndex", " ", "=", " ", "1"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"j", " ", "=", " ", "2"}], ",", " ", 
+     RowBox[{"j", " ", "\[LessEqual]", " ", "n"}], ",", " ", 
+     RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"B", "[", 
+         RowBox[{"[", 
+          RowBox[{"n", ",", " ", "j"}], "]"}], "]"}], " ", "<", " ", 
+        "sumOfShortestPath"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"sumOfShortestPath", " ", "=", " ", 
+         RowBox[{"B", "[", 
+          RowBox[{"[", 
+           RowBox[{"n", ",", " ", "j"}], "]"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"lastSmallValueIndex", " ", "=", " ", "j"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}], 
+   "\[IndentingNewLine]"}]}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["sumOfShortestPath"], "Input",
+ CellChangeTimes->{{3.780884782541072*^9, 3.7808847834316254`*^9}}],
+
+Cell[BoxData["334"], "Output",
+ CellChangeTimes->{3.78088478493152*^9, 3.7809032319159245`*^9, 
+  3.780904670983509*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["lastSmallValueIndex"], "Input",
+ CellChangeTimes->{{3.780884787025135*^9, 3.780884788150051*^9}}],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{3.7808847890093803`*^9, 3.7809032349782124`*^9, 
+  3.7809046733803825`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"numbersInShortestPath", " ", "=", " ", 
+  RowBox[{"ConstantArray", "[", 
+   RowBox[{"0", ",", "n"}], "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Declaring", " ", 
+    RowBox[{"the", " ", "'"}], 
+    RowBox[{"numbersInShortestPath", "'"}], " ", "array", " ", "to", " ", 
+    "store", " ", "the", " ", "numbers", " ", "in", " ", "the", " ", 
+    "shortest", " ", "path", "\[IndentingNewLine]", "And", " ", "the", " ", 
+    "next", " ", "block", " ", "of", " ", "codes", " ", "is", " ", "finding", 
+    " ", "the", " ", "integer", " ", "numbers", " ", "from", " ", "the", " ", 
+    "shortest", " ", "path", " ", "of", " ", "the", " ", "graph"}], " ", 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{{3.7808848038053045`*^9, 3.7808848136483736`*^9}, {
+   3.780891546188566*^9, 3.7808915584690447`*^9}, 3.780904678441899*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
+   ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.780884814632609*^9, 3.780903240102844*^9, 
+  3.7809046809280715`*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"numbersInShortestPath", "[", 
+    RowBox[{"[", "n", "]"}], "]"}], " ", "=", " ", 
+   RowBox[{"A", "[", 
+    RowBox[{"[", 
+     RowBox[{"n", ",", " ", "lastSmallValueIndex"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"A", " ", "=", 
+    RowBox[{"MapAt", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{"#", ",", "Bold", ",", "Red"}], "]"}], "&"}], ",", "A", ",", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", "lastSmallValueIndex"}], "}"}], "}"}]}], "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"i", " ", "=", " ", "n"}], ";", " ", 
+    RowBox[{"j", " ", "=", " ", "lastSmallValueIndex"}]}], ",", " ", 
+   RowBox[{"i", " ", ">", " ", "1"}], ",", " ", 
+   RowBox[{"i", "--"}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"j", " ", "\[Equal]", " ", "1"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"numbersInShortestPath", "[", 
+         RowBox[{"[", 
+          RowBox[{"i", " ", "-", " ", "1"}], "]"}], "]"}], " ", "=", " ", 
+        RowBox[{"A", "[", 
+         RowBox[{"[", 
+          RowBox[{
+           RowBox[{"i", " ", "-", " ", "1"}], ",", " ", "j"}], "]"}], "]"}]}],
+        ";", "\[IndentingNewLine]", 
+       RowBox[{"A", " ", "=", 
+        RowBox[{"MapAt", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"#", ",", "Bold", ",", "Red"}], "]"}], "&"}], ",", "A", 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"i", " ", "-", " ", "1"}], ",", "j"}], "}"}], "}"}]}], 
+         "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"j", " ", "\[Equal]", " ", "i"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"numbersInShortestPath", "[", 
+         RowBox[{"[", 
+          RowBox[{"i", " ", "-", " ", "1"}], "]"}], "]"}], " ", "=", " ", 
+        RowBox[{"A", "[", 
+         RowBox[{"[", 
+          RowBox[{
+           RowBox[{"i", " ", "-", " ", "1"}], ",", " ", 
+           RowBox[{"j", " ", "-", " ", "1"}]}], "]"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"A", " ", "=", 
+        RowBox[{"MapAt", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"#", ",", "Bold", ",", "Red"}], "]"}], "&"}], ",", "A", 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"i", " ", "-", " ", "1"}], ",", 
+             RowBox[{"j", " ", "-", " ", "1"}]}], "}"}], "}"}]}], "]"}]}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"j", " ", "=", " ", 
+        RowBox[{"j", " ", "-", " ", "1"}]}], ";"}]}], "\[IndentingNewLine]", 
+     "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"j", " ", ">", " ", "1"}], ";", 
+       RowBox[{"j", " ", "\[NotEqual]", " ", "i"}], ";", 
+       RowBox[{
+        RowBox[{"B", "[", 
+         RowBox[{"[", 
+          RowBox[{
+           RowBox[{"i", " ", "-", " ", "1"}], ",", " ", 
+           RowBox[{"j", " ", "-", " ", "1"}]}], "]"}], "]"}], " ", "<", " ", 
+        RowBox[{"B", "[", 
+         RowBox[{"[", 
+          RowBox[{
+           RowBox[{"i", " ", "-", " ", "1"}], ",", " ", "j"}], "]"}], 
+         "]"}]}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"numbersInShortestPath", "[", 
+         RowBox[{"[", 
+          RowBox[{"i", " ", "-", " ", "1"}], "]"}], "]"}], " ", "=", " ", 
+        RowBox[{"A", "[", 
+         RowBox[{"[", 
+          RowBox[{
+           RowBox[{"i", " ", "-", " ", "1"}], ",", " ", 
+           RowBox[{"j", " ", "-", " ", "1"}]}], "]"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"j", " ", "=", " ", 
+        RowBox[{"j", " ", "-", " ", "1"}]}], ";"}]}], "\[IndentingNewLine]", 
+     "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"j", ">", "1"}], ";", 
+       RowBox[{"j", " ", "\[NotEqual]", " ", "i"}], ";", " ", 
+       RowBox[{
+        RowBox[{"B", "[", 
+         RowBox[{"[", 
+          RowBox[{
+           RowBox[{"i", " ", "-", " ", "1"}], ",", " ", 
+           RowBox[{"j", " ", "-", " ", "1"}]}], "]"}], "]"}], " ", ">=", " ", 
+        RowBox[{"B", "[", 
+         RowBox[{"[", 
+          RowBox[{
+           RowBox[{"i", " ", "-", " ", "1"}], ",", " ", "j"}], "]"}], 
+         "]"}]}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"numbersInShortestPath", "[", 
+         RowBox[{"[", 
+          RowBox[{"i", " ", "-", " ", "1"}], "]"}], "]"}], " ", "=", " ", 
+        RowBox[{"A", "[", 
+         RowBox[{"[", 
+          RowBox[{
+           RowBox[{"i", " ", "-", " ", "1"}], ",", " ", "j"}], "]"}], "]"}]}],
+        ";", "\[IndentingNewLine]", 
+       RowBox[{"A", " ", "=", 
+        RowBox[{"MapAt", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"#", ",", "Bold", ",", "Red"}], "]"}], "&"}], ",", "A", 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"i", " ", "-", " ", "1"}], ",", "j"}], " ", "}"}], 
+           "}"}]}], "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}]}]}], 
+  "\[IndentingNewLine]", "]"}]}], "Input",
+ CellChangeTimes->{{3.7809031362489595`*^9, 3.78090318938589*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["numbersInShortestPath"], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   StyleBox[
+    StyleBox["40",
+     StripOnInput->False,
+     LineColor->RGBColor[1, 0, 0],
+     FrontFaceColor->RGBColor[1, 0, 0],
+     BackFaceColor->RGBColor[1, 0, 0],
+     GraphicsColor->RGBColor[1, 0, 0],
+     FontWeight->Bold,
+     FontColor->RGBColor[1, 0, 0]],
+    StripOnInput->False,
+    LineColor->RGBColor[1, 0, 0],
+    FrontFaceColor->RGBColor[1, 0, 0],
+    BackFaceColor->RGBColor[1, 0, 0],
+    GraphicsColor->RGBColor[1, 0, 0],
+    FontWeight->Bold,
+    FontColor->RGBColor[1, 0, 0]], ",", 
+   StyleBox[
+    StyleBox[
+     StyleBox[
+      StyleBox[
+       StyleBox["55",
+        StripOnInput->False,
+        LineColor->RGBColor[1, 0, 0],
+        FrontFaceColor->RGBColor[1, 0, 0],
+        BackFaceColor->RGBColor[1, 0, 0],
+        GraphicsColor->RGBColor[1, 0, 0],
+        FontWeight->Bold,
+        FontColor->RGBColor[1, 0, 0]],
+       StripOnInput->False,
+       LineColor->RGBColor[1, 0, 0],
+       FrontFaceColor->RGBColor[1, 0, 0],
+       BackFaceColor->RGBColor[1, 0, 0],
+       GraphicsColor->RGBColor[1, 0, 0],
+       FontWeight->Bold,
+       FontColor->RGBColor[1, 0, 0]],
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontWeight->Bold,
+      FontColor->RGBColor[1, 0, 0]],
+     StripOnInput->False,
+     LineColor->RGBColor[1, 0, 0],
+     FrontFaceColor->RGBColor[1, 0, 0],
+     BackFaceColor->RGBColor[1, 0, 0],
+     GraphicsColor->RGBColor[1, 0, 0],
+     FontWeight->Bold,
+     FontColor->RGBColor[1, 0, 0]],
+    StripOnInput->False,
+    LineColor->RGBColor[1, 0, 0],
+    FrontFaceColor->RGBColor[1, 0, 0],
+    BackFaceColor->RGBColor[1, 0, 0],
+    GraphicsColor->RGBColor[1, 0, 0],
+    FontWeight->Bold,
+    FontColor->RGBColor[1, 0, 0]], ",", 
+   StyleBox[
+    StyleBox["74",
+     StripOnInput->False,
+     LineColor->RGBColor[1, 0, 0],
+     FrontFaceColor->RGBColor[1, 0, 0],
+     BackFaceColor->RGBColor[1, 0, 0],
+     GraphicsColor->RGBColor[1, 0, 0],
+     FontWeight->Bold,
+     FontColor->RGBColor[1, 0, 0]],
+    StripOnInput->False,
+    LineColor->RGBColor[1, 0, 0],
+    FrontFaceColor->RGBColor[1, 0, 0],
+    BackFaceColor->RGBColor[1, 0, 0],
+    GraphicsColor->RGBColor[1, 0, 0],
+    FontWeight->Bold,
+    FontColor->RGBColor[1, 0, 0]], ",", 
+   StyleBox[
+    StyleBox["8",
+     StripOnInput->False,
+     LineColor->RGBColor[1, 0, 0],
+     FrontFaceColor->RGBColor[1, 0, 0],
+     BackFaceColor->RGBColor[1, 0, 0],
+     GraphicsColor->RGBColor[1, 0, 0],
+     FontWeight->Bold,
+     FontColor->RGBColor[1, 0, 0]],
+    StripOnInput->False,
+    LineColor->RGBColor[1, 0, 0],
+    FrontFaceColor->RGBColor[1, 0, 0],
+    BackFaceColor->RGBColor[1, 0, 0],
+    GraphicsColor->RGBColor[1, 0, 0],
+    FontWeight->Bold,
+    FontColor->RGBColor[1, 0, 0]], ",", 
+   StyleBox[
+    StyleBox["44",
+     StripOnInput->False,
+     LineColor->RGBColor[1, 0, 0],
+     FrontFaceColor->RGBColor[1, 0, 0],
+     BackFaceColor->RGBColor[1, 0, 0],
+     GraphicsColor->RGBColor[1, 0, 0],
+     FontWeight->Bold,
+     FontColor->RGBColor[1, 0, 0]],
+    StripOnInput->False,
+    LineColor->RGBColor[1, 0, 0],
+    FrontFaceColor->RGBColor[1, 0, 0],
+    BackFaceColor->RGBColor[1, 0, 0],
+    GraphicsColor->RGBColor[1, 0, 0],
+    FontWeight->Bold,
+    FontColor->RGBColor[1, 0, 0]], ",", 
+   StyleBox[
+    StyleBox["21",
+     StripOnInput->False,
+     LineColor->RGBColor[1, 0, 0],
+     FrontFaceColor->RGBColor[1, 0, 0],
+     BackFaceColor->RGBColor[1, 0, 0],
+     GraphicsColor->RGBColor[1, 0, 0],
+     FontWeight->Bold,
+     FontColor->RGBColor[1, 0, 0]],
+    StripOnInput->False,
+    LineColor->RGBColor[1, 0, 0],
+    FrontFaceColor->RGBColor[1, 0, 0],
+    BackFaceColor->RGBColor[1, 0, 0],
+    GraphicsColor->RGBColor[1, 0, 0],
+    FontWeight->Bold,
+    FontColor->RGBColor[1, 0, 0]], ",", 
+   StyleBox[
+    StyleBox["31",
+     StripOnInput->False,
+     LineColor->RGBColor[1, 0, 0],
+     FrontFaceColor->RGBColor[1, 0, 0],
+     BackFaceColor->RGBColor[1, 0, 0],
+     GraphicsColor->RGBColor[1, 0, 0],
+     FontWeight->Bold,
+     FontColor->RGBColor[1, 0, 0]],
+    StripOnInput->False,
+    LineColor->RGBColor[1, 0, 0],
+    FrontFaceColor->RGBColor[1, 0, 0],
+    BackFaceColor->RGBColor[1, 0, 0],
+    GraphicsColor->RGBColor[1, 0, 0],
+    FontWeight->Bold,
+    FontColor->RGBColor[1, 0, 0]], ",", 
+   StyleBox[
+    StyleBox["15",
+     StripOnInput->False,
+     LineColor->RGBColor[1, 0, 0],
+     FrontFaceColor->RGBColor[1, 0, 0],
+     BackFaceColor->RGBColor[1, 0, 0],
+     GraphicsColor->RGBColor[1, 0, 0],
+     FontWeight->Bold,
+     FontColor->RGBColor[1, 0, 0]],
+    StripOnInput->False,
+    LineColor->RGBColor[1, 0, 0],
+    FrontFaceColor->RGBColor[1, 0, 0],
+    BackFaceColor->RGBColor[1, 0, 0],
+    GraphicsColor->RGBColor[1, 0, 0],
+    FontWeight->Bold,
+    FontColor->RGBColor[1, 0, 0]], ",", 
+   StyleBox[
+    StyleBox["46",
+     StripOnInput->False,
+     LineColor->RGBColor[1, 0, 0],
+     FrontFaceColor->RGBColor[1, 0, 0],
+     BackFaceColor->RGBColor[1, 0, 0],
+     GraphicsColor->RGBColor[1, 0, 0],
+     FontWeight->Bold,
+     FontColor->RGBColor[1, 0, 0]],
+    StripOnInput->False,
+    LineColor->RGBColor[1, 0, 0],
+    FrontFaceColor->RGBColor[1, 0, 0],
+    BackFaceColor->RGBColor[1, 0, 0],
+    GraphicsColor->RGBColor[1, 0, 0],
+    FontWeight->Bold,
+    FontColor->RGBColor[1, 0, 0]]}], "}"}]], "Output",
+ CellChangeTimes->{3.780884861988698*^9, 3.780903252492612*^9, 
+  3.7809046957504034`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{"A", ",", " ", 
+   RowBox[{"Alignment", "\[Rule]", "Center"}], ",", " ", 
+   RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.780903256132993*^9, 3.780903262929476*^9}, {
+  3.78090389116308*^9, 3.780903912945243*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     StyleBox[
+      StyleBox[
+       StyleBox["40",
+        StripOnInput->False,
+        LineColor->RGBColor[1, 0, 0],
+        FrontFaceColor->RGBColor[1, 0, 0],
+        BackFaceColor->RGBColor[1, 0, 0],
+        GraphicsColor->RGBColor[1, 0, 0],
+        FontWeight->Bold,
+        FontColor->RGBColor[1, 0, 0]],
+       StripOnInput->False,
+       LineColor->RGBColor[1, 0, 0],
+       FrontFaceColor->RGBColor[1, 0, 0],
+       BackFaceColor->RGBColor[1, 0, 0],
+       GraphicsColor->RGBColor[1, 0, 0],
+       FontWeight->Bold,
+       FontColor->RGBColor[1, 0, 0]],
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontWeight->Bold,
+      FontColor->RGBColor[1, 0, 0]], "", "", "", "", "", "", "", ""},
+    {"95", 
+     StyleBox[
+      StyleBox[
+       StyleBox[
+        StyleBox[
+         StyleBox[
+          StyleBox["55",
+           StripOnInput->False,
+           LineColor->RGBColor[1, 0, 0],
+           FrontFaceColor->RGBColor[1, 0, 0],
+           BackFaceColor->RGBColor[1, 0, 0],
+           GraphicsColor->RGBColor[1, 0, 0],
+           FontWeight->Bold,
+           FontColor->RGBColor[1, 0, 0]],
+          StripOnInput->False,
+          LineColor->RGBColor[1, 0, 0],
+          FrontFaceColor->RGBColor[1, 0, 0],
+          BackFaceColor->RGBColor[1, 0, 0],
+          GraphicsColor->RGBColor[1, 0, 0],
+          FontWeight->Bold,
+          FontColor->RGBColor[1, 0, 0]],
+         StripOnInput->False,
+         LineColor->RGBColor[1, 0, 0],
+         FrontFaceColor->RGBColor[1, 0, 0],
+         BackFaceColor->RGBColor[1, 0, 0],
+         GraphicsColor->RGBColor[1, 0, 0],
+         FontWeight->Bold,
+         FontColor->RGBColor[1, 0, 0]],
+        StripOnInput->False,
+        LineColor->RGBColor[1, 0, 0],
+        FrontFaceColor->RGBColor[1, 0, 0],
+        BackFaceColor->RGBColor[1, 0, 0],
+        GraphicsColor->RGBColor[1, 0, 0],
+        FontWeight->Bold,
+        FontColor->RGBColor[1, 0, 0]],
+       StripOnInput->False,
+       LineColor->RGBColor[1, 0, 0],
+       FrontFaceColor->RGBColor[1, 0, 0],
+       BackFaceColor->RGBColor[1, 0, 0],
+       GraphicsColor->RGBColor[1, 0, 0],
+       FontWeight->Bold,
+       FontColor->RGBColor[1, 0, 0]],
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontWeight->Bold,
+      FontColor->RGBColor[1, 0, 0]], "", "", "", "", "", "", ""},
+    {"72", "86", 
+     StyleBox[
+      StyleBox[
+       StyleBox["74",
+        StripOnInput->False,
+        LineColor->RGBColor[1, 0, 0],
+        FrontFaceColor->RGBColor[1, 0, 0],
+        BackFaceColor->RGBColor[1, 0, 0],
+        GraphicsColor->RGBColor[1, 0, 0],
+        FontWeight->Bold,
+        FontColor->RGBColor[1, 0, 0]],
+       StripOnInput->False,
+       LineColor->RGBColor[1, 0, 0],
+       FrontFaceColor->RGBColor[1, 0, 0],
+       BackFaceColor->RGBColor[1, 0, 0],
+       GraphicsColor->RGBColor[1, 0, 0],
+       FontWeight->Bold,
+       FontColor->RGBColor[1, 0, 0]],
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontWeight->Bold,
+      FontColor->RGBColor[1, 0, 0]], "", "", "", "", "", ""},
+    {"66", "13", 
+     StyleBox[
+      StyleBox[
+       StyleBox["8",
+        StripOnInput->False,
+        LineColor->RGBColor[1, 0, 0],
+        FrontFaceColor->RGBColor[1, 0, 0],
+        BackFaceColor->RGBColor[1, 0, 0],
+        GraphicsColor->RGBColor[1, 0, 0],
+        FontWeight->Bold,
+        FontColor->RGBColor[1, 0, 0]],
+       StripOnInput->False,
+       LineColor->RGBColor[1, 0, 0],
+       FrontFaceColor->RGBColor[1, 0, 0],
+       BackFaceColor->RGBColor[1, 0, 0],
+       GraphicsColor->RGBColor[1, 0, 0],
+       FontWeight->Bold,
+       FontColor->RGBColor[1, 0, 0]],
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontWeight->Bold,
+      FontColor->RGBColor[1, 0, 0]], "98", "", "", "", "", ""},
+    {"81", "50", "82", 
+     StyleBox[
+      StyleBox[
+       StyleBox["44",
+        StripOnInput->False,
+        LineColor->RGBColor[1, 0, 0],
+        FrontFaceColor->RGBColor[1, 0, 0],
+        BackFaceColor->RGBColor[1, 0, 0],
+        GraphicsColor->RGBColor[1, 0, 0],
+        FontWeight->Bold,
+        FontColor->RGBColor[1, 0, 0]],
+       StripOnInput->False,
+       LineColor->RGBColor[1, 0, 0],
+       FrontFaceColor->RGBColor[1, 0, 0],
+       BackFaceColor->RGBColor[1, 0, 0],
+       GraphicsColor->RGBColor[1, 0, 0],
+       FontWeight->Bold,
+       FontColor->RGBColor[1, 0, 0]],
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontWeight->Bold,
+      FontColor->RGBColor[1, 0, 0]], "2", "", "", "", ""},
+    {"25", "72", "4", 
+     StyleBox[
+      StyleBox[
+       StyleBox["21",
+        StripOnInput->False,
+        LineColor->RGBColor[1, 0, 0],
+        FrontFaceColor->RGBColor[1, 0, 0],
+        BackFaceColor->RGBColor[1, 0, 0],
+        GraphicsColor->RGBColor[1, 0, 0],
+        FontWeight->Bold,
+        FontColor->RGBColor[1, 0, 0]],
+       StripOnInput->False,
+       LineColor->RGBColor[1, 0, 0],
+       FrontFaceColor->RGBColor[1, 0, 0],
+       BackFaceColor->RGBColor[1, 0, 0],
+       GraphicsColor->RGBColor[1, 0, 0],
+       FontWeight->Bold,
+       FontColor->RGBColor[1, 0, 0]],
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontWeight->Bold,
+      FontColor->RGBColor[1, 0, 0]], "7", "15", "", "", ""},
+    {"53", "39", "39", 
+     StyleBox[
+      StyleBox[
+       StyleBox["31",
+        StripOnInput->False,
+        LineColor->RGBColor[1, 0, 0],
+        FrontFaceColor->RGBColor[1, 0, 0],
+        BackFaceColor->RGBColor[1, 0, 0],
+        GraphicsColor->RGBColor[1, 0, 0],
+        FontWeight->Bold,
+        FontColor->RGBColor[1, 0, 0]],
+       StripOnInput->False,
+       LineColor->RGBColor[1, 0, 0],
+       FrontFaceColor->RGBColor[1, 0, 0],
+       BackFaceColor->RGBColor[1, 0, 0],
+       GraphicsColor->RGBColor[1, 0, 0],
+       FontWeight->Bold,
+       FontColor->RGBColor[1, 0, 0]],
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontWeight->Bold,
+      FontColor->RGBColor[1, 0, 0]], "97", "86", "61", "", ""},
+    {"40", "72", "28", 
+     StyleBox[
+      StyleBox[
+       StyleBox["15",
+        StripOnInput->False,
+        LineColor->RGBColor[1, 0, 0],
+        FrontFaceColor->RGBColor[1, 0, 0],
+        BackFaceColor->RGBColor[1, 0, 0],
+        GraphicsColor->RGBColor[1, 0, 0],
+        FontWeight->Bold,
+        FontColor->RGBColor[1, 0, 0]],
+       StripOnInput->False,
+       LineColor->RGBColor[1, 0, 0],
+       FrontFaceColor->RGBColor[1, 0, 0],
+       BackFaceColor->RGBColor[1, 0, 0],
+       GraphicsColor->RGBColor[1, 0, 0],
+       FontWeight->Bold,
+       FontColor->RGBColor[1, 0, 0]],
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontWeight->Bold,
+      FontColor->RGBColor[1, 0, 0]], "52", "65", "7", "45", ""},
+    {"72", "53", "90", 
+     StyleBox[
+      StyleBox[
+       StyleBox["46",
+        StripOnInput->False,
+        LineColor->RGBColor[1, 0, 0],
+        FrontFaceColor->RGBColor[1, 0, 0],
+        BackFaceColor->RGBColor[1, 0, 0],
+        GraphicsColor->RGBColor[1, 0, 0],
+        FontWeight->Bold,
+        FontColor->RGBColor[1, 0, 0]],
+       StripOnInput->False,
+       LineColor->RGBColor[1, 0, 0],
+       FrontFaceColor->RGBColor[1, 0, 0],
+       BackFaceColor->RGBColor[1, 0, 0],
+       GraphicsColor->RGBColor[1, 0, 0],
+       FontWeight->Bold,
+       FontColor->RGBColor[1, 0, 0]],
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontWeight->Bold,
+      FontColor->RGBColor[1, 0, 0]], "65", "33", "71", "70", "58"}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{"Columns" -> {{Center}}},
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.780903915398172*^9, 3.780904699744042*^9}]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1576, 36, 88, "Input"],
+Cell[CellGroupData[{
+Cell[2159, 60, 484, 10, 30, "Input"],
+Cell[2646, 72, 1027, 28, 30, "Output"]
+}, Open  ]],
+Cell[3688, 103, 308, 8, 30, "Input"],
+Cell[3999, 113, 772, 16, 107, "Input"],
+Cell[4774, 131, 5383, 131, 392, "Input"],
+Cell[CellGroupData[{
+Cell[10182, 266, 433, 9, 30, "Input"],
+Cell[10618, 277, 1138, 31, 50, "Output"]
+}, Open  ]],
+Cell[11771, 311, 1832, 46, 240, "Input"],
+Cell[CellGroupData[{
+Cell[13628, 361, 111, 1, 30, "Input"],
+Cell[13742, 364, 120, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13899, 371, 111, 1, 30, "Input"],
+Cell[14013, 374, 123, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14173, 381, 842, 15, 50, "Input"],
+Cell[15018, 398, 241, 6, 30, "Output"]
+}, Open  ]],
+Cell[15274, 407, 5618, 154, 430, "Input"],
+Cell[CellGroupData[{
+Cell[20917, 565, 47, 0, 30, "Input"],
+Cell[20967, 567, 5510, 172, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26514, 744, 293, 6, 30, "Input"],
+Cell[26810, 752, 8905, 257, 215, "Output"]
+}, Open  ]]
+}
+]
+*)
+
